@@ -211,7 +211,7 @@
             .hero-text { padding: 3rem 2rem; text-align: center; }
             .hero-text h1 { font-size: 3rem; }
             .hero-text p { margin: auto; }
-            nav { display: none; } /* Oculta nav en móvil para limpieza, o se puede ajustar a menú hamburguesa */
+            nav { display: none; }
         }
     </style>
 </head>
@@ -251,8 +251,8 @@
     <div class="filters">
         <button class="filter-btn active" onclick="filterSelection('all')">TODAS</button>
         <button class="filter-btn" onclick="filterSelection('sax')">CUARTETO SAXOFONES</button>
-        <button class="filter-btn" onclick="filterSelection('banda')">BANDA SINFÓNICA</button>
         <button class="filter-btn" onclick="filterSelection('clari')">CUARTETO CLARINETES</button>
+        <button class="filter-btn" onclick="filterSelection('banda')">BANDA SINFÓNICA</button>
     </div>
 
     <div class="works-grid">
@@ -269,6 +269,22 @@
             <div class="work-info">
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">EL QUIEBRADEDOS</p>
+            </div>
+        </div>
+
+        <div class="work-card filter-item sax">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/sinrastro.png?raw=true" alt="SIN RASTRO">
+            <div class="work-info">
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
+                <p class="work-title">SIN RASTRO (Guabina)</p>
+            </div>
+        </div>
+
+        <div class="work-card filter-item clari">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/Una%20vez%20mas.png?raw=true" alt="UNA VEZ MÁS">
+            <div class="work-info">
+                <span class="work-cat">CUARTETO DE CLARINETES</span>
+                <p class="work-title">UNA VEZ MÁS</p>
             </div>
         </div>
     </div>
