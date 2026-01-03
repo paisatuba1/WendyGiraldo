@@ -11,6 +11,7 @@
             --light: #ffffff;
             --gray: #f8f8f8;
             --accent: #666666;
+            --overlay: rgba(0, 0, 0, 0.9);
         }
 
         body {
@@ -195,12 +196,51 @@
             padding: 5px 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
         .btn-sheet:hover {
             background: var(--dark);
             color: var(--light);
+        }
+
+        /* MODAL / LIGHTBOX */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
         }
 
         /* FOOTER */
@@ -291,7 +331,7 @@
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">LA CHIVA</p>
                 <span class="work-tag">Pasillo (Composición)</span>
-                <a href="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/chiva2.png?raw=true" target="_blank" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/chiva2.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -301,7 +341,7 @@
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">EL QUIEBRADEDOS</p>
                 <span class="work-tag">Pasillo arria’o (Composición)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/quiebradedos.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -311,7 +351,7 @@
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">SIN RASTRO</p>
                 <span class="work-tag">Guabina (Composición)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/sinrastro.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -321,7 +361,7 @@
                 <span class="work-cat">CUARTETO DE CLARINETES</span>
                 <p class="work-title">UNA VEZ MÁS</p>
                 <span class="work-tag">Aguabajo (Composición)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/Una%20vez%20mas.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -331,7 +371,7 @@
                 <span class="work-cat">INSTRUMENTO SOLISTA</span>
                 <p class="work-title">ÚLTIMO JULIO</p>
                 <span class="work-tag">Bambuco (Composición)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/ultimojulio.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -341,7 +381,7 @@
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">TOLÚ</p>
                 <span class="work-tag">Gaita (Arreglo)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/tolu.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -351,7 +391,7 @@
                 <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">BANDOLITA</p>
                 <span class="work-tag">Pasillo (Arreglo)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/bandolita.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -361,7 +401,7 @@
                 <span class="work-cat">BANDA SINFÓNICA</span>
                 <p class="work-title">ADONAY</p>
                 <span class="work-tag">Tropical (Arreglo)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/adonay.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
 
@@ -371,11 +411,16 @@
                 <span class="work-cat">BANDA SINFÓNICA</span>
                 <p class="work-title">CON EL ALMA ENAMORADA</p>
                 <span class="work-tag">Tropical (Arreglo)</span>
-                <a href="#" class="btn-sheet">VER MUESTRA</a>
+                <span class="btn-sheet" onclick="openModal('https://github.com/paisatuba1/WendyGiraldo/blob/main/img/almaenamorada.png?raw=true')">VER MUESTRA</span>
             </div>
         </div>
     </div>
 </section>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull" oncontextmenu="return false;">
+</div>
 
 <footer id="contacto">
     <div class="footer-logo">WENDY GIRALDO</div>
@@ -388,6 +433,7 @@
 </footer>
 
 <script>
+    // Filtros de obras
     function filterSelection(c) {
         var x, i;
         x = document.getElementsByClassName("filter-item");
@@ -403,6 +449,21 @@
             btns[j].classList.remove("active");
         }
         event.currentTarget.classList.add("active");
+    }
+
+    // Funciones del Modal
+    function openModal(imgSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgFull");
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("active"), 10);
+        modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.remove("active");
+        setTimeout(() => modal.style.display = "none", 300);
     }
 </script>
 
