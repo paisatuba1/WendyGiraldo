@@ -15,16 +15,11 @@
 
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif; /* Preferencia del usuario */
+            font-family: 'Alegreya', serif;
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.8;
             scroll-behavior: smooth;
-        }
-
-        /* Aplicar Alegreya a encabezados por estilo editorial */
-        h1, h2, .logo, .work-title, nav a {
-            font-family: 'Alegreya', serif;
         }
 
         header {
@@ -90,6 +85,7 @@
 
         .hero-text p {
             font-size: 1.3rem;
+            font-style: italic;
             color: var(--accent);
             max-width: 450px;
         }
@@ -129,13 +125,13 @@
         .filter-btn {
             background: none;
             border: 1px solid var(--dark);
-            padding: 10px 20px;
+            padding: 10px 25px;
             margin: 5px;
             cursor: pointer;
             font-family: 'Alegreya', serif;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             transition: 0.3s;
         }
 
@@ -146,9 +142,9 @@
 
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1100px;
             margin: auto;
         }
 
@@ -160,34 +156,28 @@
 
         .work-card:hover { transform: translateY(-10px); }
 
-        .work-card img { width: 100%; display: block; margin-bottom: 1rem; }
+        .work-card img { width: 100%; display: block; margin-bottom: 1.5rem; }
 
-        .work-info { padding: 0 1rem; text-align: center; }
+        .work-info { padding: 0 1.5rem; text-align: center; }
 
         .work-cat {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 800;
             color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .work-title { font-weight: 700; font-size: 1.1rem; margin: 5px 0; }
-        
-        .work-type { font-size: 0.8rem; color: #888; }
+        .work-title { font-weight: 700; font-size: 1.2rem; margin: 0; line-height: 1.3; }
 
-        .instagram-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--light);
-            padding: 10px 20px;
-            transition: 0.3s;
+        .work-tag {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--accent);
+            display: block;
+            margin-top: 5px;
         }
 
         footer {
@@ -205,11 +195,26 @@
             text-transform: uppercase;
         }
 
+        .instagram-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--light);
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        .instagram-link:hover { background: var(--light); color: var(--dark); }
+
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; }
             .hero-image { height: 60vh; }
             .hero-text { padding: 3rem 2rem; text-align: center; }
-            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text h1 { font-size: 3rem; }
             nav { display: none; }
         }
     </style>
@@ -238,8 +243,8 @@
 <div class="container" id="bio">
     <h2>BIOGRAFÍA</h2>
     <div class="bio-content">
-        <p>Saxofonista y compositora COLOMBIANA. Egresada de la Banda Sinfónica de la Institución Educativa Manzanares bajo la dirección del Maestro Alfonso Velásquez, Maestra en Música de la Universidad de Caldas y Máster en Interpretación de la Música Clásica y Contemporánea del Conservatori Liceu de Barcelona.</p>
-        <p>Como saxofonista ha pertenecido a agrupaciones de renombre como la Banda Municipal de Manizales, la Banda Filarmónica Juvenil de Bogotá y la Banda Filarmónica de Caldas. Ha colaborado con la Orquesta Sinfónica Nacional de COLOMBIA y se ha presentado como solista con la Banda Sinfónica Nacional de COLOMBIA.</p>
+        <p>Saxofonista y compositora Colombiana. Egresada de la Banda Sinfónica de la Institución Educativa Manzanares bajo la dirección del Maestro Alfonso Velásquez, Maestra en Música de la Universidad de Caldas y Máster en Interpretación de la Música Clásica y Contemporánea del Conservatori Liceu de Barcelona.</p>
+        <p>Como saxofonista ha pertenecido a agrupaciones de renombre como la Banda Municipal de Manizales, la Banda Filarmónica Juvenil de Bogotá y la Banda Filarmónica de Caldas. Ha colaborado con la Orquesta Sinfónica Nacional de Colombia y se ha presentado como solista con la Banda Sinfónica Nacional de Colombia.</p>
         <p>Integrante de <strong>Presto Ensamble</strong> y del <strong>Cuarteto de Saxofones Spinto</strong>, ganadora de múltiples premios nacionales incluyendo el Gran Premio a la Excelencia Marino Gómez Estrada y el Festival Mono Núñez.</p>
     </div>
 </div>
@@ -256,66 +261,66 @@
     </div>
 
     <div class="works-grid">
-        <div class="work-card filter-item clari">
-            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/Una%20vez%20mas.png?raw=true" alt="UNA VEZ MÁS">
-            <div class="work-info">
-                <span class="work-cat">AGUABAJO</span>
-                <p class="work-title">UNA VEZ MÁS</p>
-                <span class="work-type">Composición | Cuarteto de Clarinetes</span>
-            </div>
-        </div>
-
-        <div class="work-card filter-item solista">
-            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/ultimojulio.png?raw=true" alt="ÚLTIMO JULIO">
-            <div class="work-info">
-                <span class="work-cat">BAMBUCO</span>
-                <p class="work-title">ÚLTIMO JULIO</p>
-                <span class="work-type">Composición | Instrumento Solista</span>
-            </div>
-        </div>
-
-        <div class="work-card filter-item sax">
-            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/tolu.png?raw=true" alt="TOLÚ">
-            <div class="work-info">
-                <span class="work-cat">GAITA</span>
-                <p class="work-title">TOLÚ</p>
-                <span class="work-type">Arreglo | Cuarteto de Saxofones</span>
-            </div>
-        </div>
-
-        <div class="work-card filter-item sax">
-            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/sinrastro.png?raw=true" alt="SIN RASTRO">
-            <div class="work-info">
-                <span class="work-cat">GUABINA</span>
-                <p class="work-title">SIN RASTRO</p>
-                <span class="work-type">Composición | Cuarteto de Saxofones</span>
-            </div>
-        </div>
-
         <div class="work-card filter-item sax">
             <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/chiva.png?raw=true" alt="LA CHIVA">
             <div class="work-info">
-                <span class="work-cat">PASILLO</span>
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">LA CHIVA</p>
-                <span class="work-type">Composición | Cuarteto de Saxofones</span>
+                <span class="work-tag">Pasillo (Composición)</span>
             </div>
         </div>
 
         <div class="work-card filter-item sax">
             <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/quiebradedos.png?raw=true" alt="EL QUIEBRADEDOS">
             <div class="work-info">
-                <span class="work-cat">PASILLO ARRIA’O</span>
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">EL QUIEBRADEDOS</p>
-                <span class="work-type">Composición | Cuarteto de Saxofones</span>
+                <span class="work-tag">Pasillo arria’o (Composición)</span>
+            </div>
+        </div>
+
+        <div class="work-card filter-item sax">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/sinrastro.png?raw=true" alt="SIN RASTRO">
+            <div class="work-info">
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
+                <p class="work-title">SIN RASTRO</p>
+                <span class="work-tag">Guabina (Composición)</span>
+            </div>
+        </div>
+
+        <div class="work-card filter-item clari">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/Una%20vez%20mas.png?raw=true" alt="UNA VEZ MÁS">
+            <div class="work-info">
+                <span class="work-cat">CUARTETO DE CLARINETES</span>
+                <p class="work-title">UNA VEZ MÁS</p>
+                <span class="work-tag">Aguabajo (Composición)</span>
+            </div>
+        </div>
+
+        <div class="work-card filter-item solista">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/ultimojulio.png?raw=true" alt="ÚLTIMO JULIO">
+            <div class="work-info">
+                <span class="work-cat">INSTRUMENTO SOLISTA</span>
+                <p class="work-title">ÚLTIMO JULIO</p>
+                <span class="work-tag">Bambuco (Composición)</span>
+            </div>
+        </div>
+
+        <div class="work-card filter-item sax">
+            <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/tolu.png?raw=true" alt="TOLÚ">
+            <div class="work-info">
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
+                <p class="work-title">TOLÚ</p>
+                <span class="work-tag">Gaita (Arreglo)</span>
             </div>
         </div>
 
         <div class="work-card filter-item sax">
             <img src="https://github.com/paisatuba1/WendyGiraldo/blob/main/img/bandolita.png?raw=true" alt="BANDOLITA">
             <div class="work-info">
-                <span class="work-cat">PASILLO</span>
+                <span class="work-cat">CUARTETO DE SAXOFONES</span>
                 <p class="work-title">BANDOLITA</p>
-                <span class="work-type">Arreglo | Cuarteto de Saxofones</span>
+                <span class="work-tag">Pasillo (Arreglo)</span>
             </div>
         </div>
     </div>
